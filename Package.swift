@@ -3,30 +3,27 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-parser",
-    products: [
-        .executable(name: "swift-parser", targets: ["Main"]),
-    ],
+    name: "swift-formatter",
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.2.0"),
     ],
     targets: [
-        .target(
-            name: "Main",
+        .executableTarget(
+            name: "swift-formatter",
             dependencies: [
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
-                "CodeParser"
+                "CodeFormatter"
             ],
             path: "Sources/Command"
         ),
         .target(
-            name: "CodeParser",
+            name: "CodeFormatter",
             dependencies: [],
-            path: "Sources/CodeParser"
+            path: "Sources/CodeFormatter"
         ),
         .testTarget(
-            name: "CodeParserTests",
-            dependencies: ["CodeParser"]
+            name: "CodeFormatterTests",
+            dependencies: ["CodeFormatter"]
         ),
     ]
 )

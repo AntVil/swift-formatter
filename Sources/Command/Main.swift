@@ -1,9 +1,9 @@
 import ArgumentParser
-import CodeParser
+import CodeFormatter
 
 @main
 struct Main: ParsableCommand {
-    @Argument(help: "The file to parse")
+    @Argument(help: "The file to format")
     var file: String
 
     mutating func run() throws {

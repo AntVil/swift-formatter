@@ -1,8 +1,8 @@
 import XCTest
 
-@testable import CodeParser
+@testable import CodeFormatter
 
-final class CodeParserTests: XCTestCase {
+final class CodeFormatterTests: XCTestCase {
     func testTokenization() throws {
         XCTAssertEqual(
             SourceCodeIterator(sourceCode: "let x: Int = 10e3").allTokens,
